@@ -6,6 +6,12 @@ Mudmin is a vanila Laravel Application configured to use Bootstrap4 Admin Templa
 
 Though it's still at an infant stage, there are more features to come... If you have any suggestion for features to be included, please send an e-mail to Muhammad Mwinchande via [ammwinchande@gmail.com](mailto:ammwinchande@gmail.com). Eventually, they will be implemented if the need seems necessary.
 
+## Installation Guide
+
+After cloning the project, open it on your editor of choice and also navigate to project directory using `Terminal` or `CMD` for Windows users then run the following commands:
+- `php -r "file_exists('.env') || copy('.env.example', '.env');"`
+- `npm install && npm run dev`
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
