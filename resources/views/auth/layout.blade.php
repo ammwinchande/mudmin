@@ -27,7 +27,7 @@
         defer
     ></script>
     <script
-        src="js/scripts.js"
+        src="/js/scripts.js"
         defer
     ></script>
     <script
@@ -35,10 +35,10 @@
         crossorigin="anonymous"
     ></script>
     <script
-        src="assets/demo/chart-area-demo.js"
+        src="/assets/demo/chart-area-demo.js"
         defer
     ></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="/assets/demo/chart-bar-demo.js"></script>
     <script
         src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
         crossorigin="anonymous"
@@ -50,7 +50,7 @@
         defer
     ></script>
     <script
-        src="assets/demo/datatables-demo.js"
+        src="/assets/demo/datatables-demo.js"
         defer
     ></script>
 
@@ -70,21 +70,20 @@
         rel="stylesheet"
     >
     <link
-        href="css/styles.css"
+        href="{{ asset('css/styles.css') }}"
         rel="stylesheet"
     />
 </head>
 
-<body class="sb-nav-fixed">
+<body class="bg-secondary">
     <div id="app">
-        @include('layouts.topnav')
-        <div id="layoutSidenav">
-            @include('layouts.sidenav')
-
-            <div id="layoutSidenav_content">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
                 <main>
                     @yield('content')
                 </main>
+            </div>
+            <div id="layoutAuthentication_footer">
                 @include('layouts.footer')
             </div>
         </div>

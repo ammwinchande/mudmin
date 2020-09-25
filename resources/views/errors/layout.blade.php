@@ -1,57 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-        <title>@yield('title')</title>
+<head>
+    <meta charset="utf-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
 
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <title>
+        {{ config('app.name', 'Laravel') }} @yield('title')
+    </title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <link
+        href="{{ asset('css/app.css') }}"
+        rel="stylesheet"
+    >
+    <link
+        href="css/styles.css"
+        rel="stylesheet"
+    />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+        crossorigin="anonymous"
+        defer
+    ></script>
+</head>
 
-            .full-height {
-                height: 100vh;
-            }
+<body>
+    <div id="layoutError">
+        <div id="layoutError_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="text-center mt-4">
+                                <h1 class="display-1">@yield('code')</h1>
+                                <p class="lead">@yield('title')</p>
+                                <p>@yield('message')</p>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 36px;
-                padding: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title">
-                    @yield('message')
+                                <a
+                                    href="{{ app('router')->has('home') ? route('home') : url('/') }}">
+                                    <i class="fas fa-arrow-left mr-1"></i>
+                                    {{ __('Return to Dashboard') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </main>
         </div>
-    </body>
+        <div id="layoutError_footer">
+            @include('layouts.footer')
+        </div>
+    </div>
+</body>
+
 </html>
