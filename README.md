@@ -9,8 +9,12 @@ Though it's still at an infant stage, there are more features to come... If you 
 ## Installation Guide
 
 After cloning the project, open it on your editor of choice and also navigate to project directory using `Terminal` or `CMD` for Windows users then run the following commands:
+
+- `composer install`
 - `php -r "file_exists('.env') || copy('.env.example', '.env');"`
+- `php artisan key:generate`
 - `npm install && npm run dev`
+- Open `.env` and modify everything to your preference
 
 ## About Laravel
 
